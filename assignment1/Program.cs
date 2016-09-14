@@ -10,6 +10,14 @@ namespace assignment1
     {
         static void Main(string[] args)
         {
+            UserInterface ui = new UserInterface();
+
+            int choice = ui.GetUserInput();
+
+            while (choice != 5)
+            {
+                choice = ui.GetUserInput();
+            }
         }
     }
 }
