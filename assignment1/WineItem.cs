@@ -16,7 +16,9 @@ namespace assignment1
         //Backing Fields
         //*********************************
         private string _id;
-
+        private string _description;
+        private string _pack;
+        
         //*********************************
         //Properties
         //*********************************
@@ -27,7 +29,44 @@ namespace assignment1
             set { _id = value; }
         }
 
-        public string Description { get; set; }
-        public string Pack { get; set; }
+        public string Description
+        {
+            get { return _description; }
+            set { _description = value; }
+        }
+        public string Pack {
+            get { return _pack; }
+            set { _pack = value; }
+        }
+
+        //*********************************
+        //Constructors
+        //*********************************
+        public WineItem (string id, string description, string pack)
+        {  // 3 Parameter Constructor
+            this._id = id;
+            this._description = description;
+            this._pack = pack;
+        }
+
+        public WineItem()
+        {
+            //Default Parameter Constructor added in per speicifications
+        }
+
+        //*********************************
+        //Methods
+        //*********************************
+
+        private string CreateOverideString()
+        {
+            string overideString = $"{this._description} Wine ID: {this._id}; Sold in: {this._pack}";
+            return overideString;
+        }
+
+        public override string ToString()
+        {
+            return CreateOverideString();
+        }
     }
 }
