@@ -9,8 +9,25 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace assignment1
-{
+{// Class to hold one record of a wine item.
     class WineItem
     {
+        //*********************************
+        //Backing Fields
+        //*********************************
+        private string _id;
+
+        //*********************************
+        //Properties
+        //*********************************
+
+        public string ID
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
+        public string Description { get; set; }
+        public string Pack { get; set; }
     }
 }

@@ -15,14 +15,27 @@ namespace assignment1
     {
         static void Main(string[] args)
         {
+            WineItem wineItem = new WineItem();
+            wineItem.ID = "123 ";
+            wineItem.Description = "Rose Water ";
+            wineItem.Pack = "Single bottle";
+
             UserInterface ui = new UserInterface();
 
             int choice = ui.GetUserInput();
 
             while (choice != 5)
             {
+                if (choice == 2)
+                { ui.PrintOutput("wine item " + wineItem.ID + wineItem.Description + wineItem.Pack); }
                 choice = ui.GetUserInput();
+
             }
+
+
+
+            
+
         }
     }
 }
