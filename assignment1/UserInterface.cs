@@ -35,8 +35,13 @@ namespace assignment1
 
         private void PrintMenu()
         {
-            Console.WriteLine("Menu: Press the number of the item you wish to do.");
-            Console.WriteLine("1) Load Wine List 2) Print Wine List 3) Search for Wine 4) Add a new Wine 5) Exit");
+            Console.WriteLine("Menu:");
+            Console.WriteLine("1) Load Wine List");
+            Console.WriteLine("2) Print Wine List");
+            Console.WriteLine("3) Search for Wine");
+            Console.WriteLine("4) Add a new Wine");
+            Console.WriteLine("5) Exit");
+            Console.Write("Press the number of the menu item: ");
 
         }
     }

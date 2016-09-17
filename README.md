@@ -1,7 +1,7 @@
 # Assignment 1 - Review of C# Basic Concepts and Introduction to Git
 ## Due 9-20-2016
 
-## Author
+## Author Jeffrey Martin
 
 ## Description
 
@@ -80,5 +80,7 @@ Suggestion/Hints:
 | **Total**           | **100**|
 
 ## Outside Resources Used
+None
 
 ## Known Problems, Issues, And/Or Errors in the Program
+None
