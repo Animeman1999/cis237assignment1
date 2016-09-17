@@ -12,5 +12,19 @@ namespace assignment1
 {
     class WineItemCollection
     {
+        //*********************************
+        //Backing Fields
+        //*********************************
+        WineItem[] WineCollection; 
+
+        //*********************************
+        //Constructor
+        //*********************************
+
+        
+        public WineItemCollection()
+        {
+            WineCollection = new WineItem[4000];
+        }
     }
 }

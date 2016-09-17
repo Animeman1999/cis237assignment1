@@ -15,6 +15,12 @@ namespace assignment1
     {
         static void Main(string[] args)
         {
+            const String CSV_FILE_PATH = "../../datafiles/WineList.csv";
+
+            WineItemCollection wineCollection = new WineItemCollection();
+
+            CSVProcessor loadRecords = new CSVProcessor();
+
             WineItem wineItem = new WineItem();
             wineItem.ID = "123";
             wineItem.Description = "Rose Water";
@@ -30,6 +36,10 @@ namespace assignment1
                 {
                     ui.PrintOutput("wine item " + wineItem.ID + wineItem.Description + wineItem.Pack);
                     ui.PrintOutput(wineItem.ToString());
+                }
+                if (choice == 1)
+                {
+                    loadRecords.ReadFile(CSV_FILE_PATH, wineCollection);
                 }
                 choice = ui.GetUserInput();
             }
