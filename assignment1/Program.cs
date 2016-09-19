@@ -21,17 +21,13 @@ namespace assignment1
 
             var wineCollection = wineItemCollection.CreateWineCollection();
 
-
             CSVProcessor loadRecords = new CSVProcessor();
 
             WineItem wineItem = new WineItem();
-            wineItem.ID = "123";
-            wineItem.Description = "Rose Water";
-            wineItem.Pack = "Single bottle";
 
             UserInterface ui = new UserInterface();
 
-            int choice = ui.GetUserInput();
+            int choice = ui.GetUserInputMenu();
 
             while (choice != 5)
             {
@@ -39,12 +35,13 @@ namespace assignment1
                 {
                     case 1:
                         loadRecords.ReadFile(CSV_FILE_PATH, wineCollection);
+                        ui.PrintOutput("********Wines have been loaded********");
                         break;
                     case 2:
                         ui.PrintOutput(ui.CreateListString(wineCollection));
                         break;
                     case 3:
-
+                        SearchForWine(wineCollection, loadRecords);
                         break;
 
                     default:
@@ -52,11 +49,27 @@ namespace assignment1
                         break;
                 }
 
-                choice = ui.GetUserInput();
+                choice = ui.GetUserInputMenu();
             }
 
         }
+        static void SearchForWine(WineItem[] WineCollection, CSVProcessor ExamineFile)
+        {
+            UserInterface ui = new UserInterface();
+            int choice = ui.GetUserInputSearch();
+            while (choice != 3)
+            {
+                if (choice == 1)
+                {
+                    ui.SearchByID(WineCollection, ExamineFile);
+                }
+                else
+                {
 
+                }
+                choice = ui.GetUserInputSearch();
+            }
+        }
 
     }
 }

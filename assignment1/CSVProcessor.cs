@@ -69,5 +69,33 @@ namespace assignment1
 
             wineCollection[index] = new WineItem(id, description, pack);
         }
+
+        public string SearchByID(WineItem[] wineCollection, string SeachID)
+        {
+            bool found = false;
+            string listString = "*********************************************************************" + Environment.NewLine;
+            foreach (WineItem wineItem in wineCollection)
+            {
+                
+                if (wineItem != null)
+                {
+                    if (SeachID == wineItem.ID)
+                    {
+                        found = true;
+                        listString += wineItem + Environment.NewLine;
+                    }
+                }
+
+            }
+
+            if (!found)
+            {
+                listString += SeachID + " was not found." + Environment.NewLine;
+            }
+
+            listString += "*********************************************************************" + Environment.NewLine;
+
+            return listString;
+        }
     }
 }
