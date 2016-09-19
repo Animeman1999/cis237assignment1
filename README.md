@@ -80,7 +80,8 @@ Suggestion/Hints:
 | **Total**           | **100**|
 
 ## Outside Resources Used
-None
+http://stackoverflow.com/questions/1370158/console-bufferheight-i-cant-see-scroll-to-see-all-the-console-output-with-con
+
 
 ## Known Problems, Issues, And/Or Errors in the Program
 None

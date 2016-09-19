@@ -175,6 +175,7 @@ namespace assignment1
 
         public void PrintOutput (string printOutput)
         {
+            Console.BufferHeight = Int16.MaxValue - 1;
             Console.WriteLine(printOutput);
         }
 
