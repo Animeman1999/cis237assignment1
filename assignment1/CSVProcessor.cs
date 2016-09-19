@@ -70,7 +70,7 @@ namespace assignment1
             wineCollection[index] = new WineItem(id, description, pack);
         }
 
-        public string SearchByID(WineItem[] wineCollection, string SeachID)
+        public string SearchByID(WineItem[] wineCollection, string SearchID)
         {
             bool found = false;
             string listString = "*********************************************************************" + Environment.NewLine;
@@ -79,22 +79,42 @@ namespace assignment1
                 
                 if (wineItem != null)
                 {
-                    if (SeachID == wineItem.ID)
+                    if (SearchID == wineItem.ID)
                     {
                         found = true;
                         listString += wineItem + Environment.NewLine;
                     }
                 }
-
             }
-
             if (!found)
             {
-                listString += SeachID + " was not found." + Environment.NewLine;
+                listString += SearchID + " was not found." + Environment.NewLine;
             }
-
             listString += "*********************************************************************" + Environment.NewLine;
+            return listString;
+        }
 
+        public string SearchByDescription(WineItem[] wineCollection, string SearchDescription)
+        {
+            bool found = false;
+            string listString = "*********************************************************************" + Environment.NewLine;
+            foreach (WineItem wineItem in wineCollection)
+            {
+
+                if (wineItem != null)
+                {
+                    if (SearchDescription == wineItem.Description)
+                    {
+                        found = true;
+                        listString += wineItem + Environment.NewLine;
+                    }
+                }
+            }
+            if (!found)
+            {
+                listString += SearchDescription + " was not found." + Environment.NewLine;
+            }
+            listString += "*********************************************************************" + Environment.NewLine;
             return listString;
         }
     }

@@ -27,29 +27,32 @@ namespace assignment1
 
             UserInterface ui = new UserInterface();
 
-            int choice = ui.GetUserInputMenu();
+            int loadChoice = ui.GetUserStartMenu();
 
-            while (choice != 5)
+            if (loadChoice == 1)
             {
-                switch (choice)
+
+                loadRecords.ReadFile(CSV_FILE_PATH, wineCollection);
+                ui.PrintOutput("********Wines have been loaded********");
+
+                int choice = ui.GetUserInputMenu();
+
+                while (choice != 4)
                 {
-                    case 1:
-                        loadRecords.ReadFile(CSV_FILE_PATH, wineCollection);
-                        ui.PrintOutput("********Wines have been loaded********");
-                        break;
-                    case 2:
-                        ui.PrintOutput(ui.CreateListString(wineCollection));
-                        break;
-                    case 3:
-                        SearchForWine(wineCollection, loadRecords);
-                        break;
+                    switch (choice)
+                    {
+                        case 1:
+                            ui.PrintOutput(ui.CreateListString(wineCollection));
+                            break;
+                        case 2:
+                            SearchForWine(wineCollection, loadRecords);
+                            break;
+                        default:
 
-                    default:
-
-                        break;
+                            break;
+                    }
+                    choice = ui.GetUserInputMenu();
                 }
-
-                choice = ui.GetUserInputMenu();
             }
 
         }
@@ -65,7 +68,7 @@ namespace assignment1
                 }
                 else
                 {
-
+                    ui.SearchByDescription(WineCollection, ExamineFile);
                 }
                 choice = ui.GetUserInputSearch();
             }
