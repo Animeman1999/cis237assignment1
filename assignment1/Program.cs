@@ -17,11 +17,11 @@ namespace assignment1
         {
             const String CSV_FILE_PATH = "../../../datafiles/WineList.csv";
 
-            //WineItemCollection wineItemCollection = new WineItemCollection();
+            WineItemCollection wineItemCollection = new WineItemCollection();
 
-            //var wineCollection = wineItemCollection.CreateWineCollection();
+            var wineCollection = wineItemCollection.CreateWineCollection();
 
-            WineItem[] wineCollection = new WineItem[4000];
+            // WineItem[] wineCollection = new WineItem[4000];
 
             CSVProcessor loadRecords = new CSVProcessor();
 
