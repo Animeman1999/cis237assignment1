@@ -19,10 +19,7 @@ namespace assignment1
             String _input = Console.ReadLine();
             while (_input != "1" && _input != "2")
             {
-                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-                Console.WriteLine("Not a valid entry, please make another choice");
-                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-                Console.WriteLine();
+                Console.WriteLine(WriteInvalidEntry());
                 this.StartMenu();
                 _input = Console.ReadLine();
             }
@@ -31,15 +28,12 @@ namespace assignment1
 
         public int GetUserInputMenu()
         {
-            this.PrintMenu();
+            this.PrintInputMenu();
             String _input = Console.ReadLine();
             while (_input != "1" && _input != "2" && _input !="3" && _input != "4")
             {
-                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-                Console.WriteLine("Not a valid entry, please make another choice");
-                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-                Console.WriteLine();
-                this.PrintMenu();
+                Console.WriteLine(WriteInvalidEntry());
+                this.PrintInputMenu();
                 _input = Console.ReadLine();
             }
             return Int16.Parse(_input);
@@ -54,10 +48,7 @@ namespace assignment1
 
             while (_input != "1" && _input != "2" && _input != "3" && _input != "4")
             {
-                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-                Console.WriteLine("Not a valid entry, please make another choice");
-                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-                Console.WriteLine();
+                Console.WriteLine(WriteInvalidEntry());
 
                 this.PrintSubMenu();
 
@@ -66,6 +57,15 @@ namespace assignment1
 
             return Int16.Parse(_input);
 
+        }
+
+        private string WriteInvalidEntry()
+        {
+            string invalidEntry;
+            invalidEntry = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + Environment.NewLine +
+                            "Not a valid entry, please make another choice" + Environment.NewLine +
+                            "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + Environment.NewLine;
+            return invalidEntry;
         }
 
         public void SearchBy(WineItem[] WineCollection, CSVProcessor ExamineFile, string propertyName)
@@ -93,10 +93,7 @@ namespace assignment1
             string idInput = Console.ReadLine();
             if (idInput == "")
             {
-                Console.WriteLine("XXXXXXXXXXXXXXXXXX");
-                Console.WriteLine("No Wine ID entered");
-                Console.WriteLine("XXXXXXXXXXXXXXXXXX");
-                Console.WriteLine();
+                Console.WriteLine(WriteInvalidEntry());
 
             }
             else
@@ -105,10 +102,7 @@ namespace assignment1
                 string descriptionInput = Console.ReadLine();
                 if (descriptionInput == "")
                 {
-                    Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXX");
-                    Console.WriteLine("No Wine Description entered");
-                    Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXX");
-                    Console.WriteLine();
+                    Console.WriteLine(WriteInvalidEntry());
                 }
                 else
                 {
@@ -116,10 +110,7 @@ namespace assignment1
                     string packInput = Console.ReadLine();
                     if (packInput == "")
                     {
-                        Console.WriteLine("XXXXXXXXXXXXXXXXXXXX");
-                        Console.WriteLine("No Wine Pack entered");
-                        Console.WriteLine("XXXXXXXXXXXXXXXXXXXX");
-                        Console.WriteLine();
+                        Console.WriteLine(WriteInvalidEntry());
                     }
                     else
                     {
@@ -156,7 +147,7 @@ namespace assignment1
             Console.Write("Press the number of the menu item: ");
         }
 
-        private void PrintMenu()
+        private void PrintInputMenu()
         {
             Console.WriteLine();
             Console.WriteLine("#############-Main Menu-#############");
