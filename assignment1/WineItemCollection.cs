@@ -15,22 +15,19 @@ namespace assignment1
         //*********************************
         //Backing Fields
         //*********************************
-       // WineItem[] WineCollection; 
+        WineItem[] WineCollection; 
 
         //*********************************
         //Constructor
         //*********************************
 
-        
-        //public WineItemCollection()
-        //{
-        //    WineCollection = new WineItem[4000];
-        //}
 
         public WineItem[] CreateWineCollection()
         {
-            WineItem[] WineCollection = new WineItem[4000];
+            WineCollection = new WineItem[4000];
             return WineCollection;
         }
+
+
     }
 }

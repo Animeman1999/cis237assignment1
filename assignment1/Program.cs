@@ -21,7 +21,6 @@ namespace assignment1
 
             var wineCollection = wineItemCollection.CreateWineCollection();
 
-            // WineItem[] wineCollection = new WineItem[4000];
 
             CSVProcessor loadRecords = new CSVProcessor();
 
@@ -36,17 +35,28 @@ namespace assignment1
 
             while (choice != 5)
             {
-                if (choice == 2)
+                switch (choice)
                 {
-                    ui.PrintOutput("wine item " + wineItem.ID + wineItem.Description + wineItem.Pack);
-                    ui.PrintOutput(wineItem.ToString());
+                    case 1:
+                        loadRecords.ReadFile(CSV_FILE_PATH, wineCollection);
+                        break;
+                    case 2:
+                        ui.PrintOutput(ui.CreateListString(wineCollection));
+                        break;
+                    case 3:
+
+                        break;
+
+                    default:
+
+                        break;
                 }
-                if (choice == 1)
-                {
-                    loadRecords.ReadFile(CSV_FILE_PATH, wineCollection);
-                }
+
                 choice = ui.GetUserInput();
             }
+
         }
+
+
     }
 }

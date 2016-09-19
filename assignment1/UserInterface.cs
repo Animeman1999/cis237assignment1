@@ -48,5 +48,30 @@ namespace assignment1
             Console.Write("Press the number of the menu item: ");
 
         }
+
+        public string CreateListString(WineItem[] WineCollection)
+        {
+            string headingString = Environment.NewLine + 
+                "ID:   Description                                                      Pack" + Environment.NewLine;
+            string listString = headingString;
+            int count = 0;
+
+            foreach (WineItem wineItem in WineCollection)
+            {
+                count++;
+
+                if (wineItem != null)
+                {
+                    if (count % 20 == 0)
+                    {
+                        listString += headingString;
+                    }
+                    listString += $"{wineItem.ID,5} {wineItem.Description,-60} {wineItem.Pack,10}" + Environment.NewLine;
+                    //listString += wineItem.ToString() + Environment.NewLine;
+                }
+                
+            }
+            return listString;
+        }
     }
 }
