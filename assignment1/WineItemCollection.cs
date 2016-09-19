@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 namespace assignment1
 {
     class WineItemCollection
-    {
+    {//Class to hold the array of WineItems
+
         //*********************************
         //Backing Fields
         //*********************************

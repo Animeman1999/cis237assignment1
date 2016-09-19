@@ -12,7 +12,9 @@ using System.Threading.Tasks;
 namespace assignment1
 {
     class Program
-    {
+    {//This file will hande instansciating the various classes used for this program and to handle
+        // the logic from the UserInterface class.
+
         static void Main(string[] args)
         {
             const String CSV_FILE_PATH = "../../../datafiles/WineList.csv";
@@ -57,7 +59,7 @@ namespace assignment1
 
         }
         static void SearchForWine(WineItem[] WineCollection, CSVProcessor ExamineFile)
-        {
+        {//  Method to hande the logic used in the SearchBy method found in UserInterface.cs
             UserInterface ui = new UserInterface();
             int choice = ui.GetUserInputSearch();
             while (choice != 4)

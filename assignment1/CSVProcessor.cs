@@ -12,9 +12,11 @@ using System.IO;
 namespace assignment1
 {
     class CSVProcessor
-    {       
+    {//This class will do all the manipulation being done to the WineItem array. The logic is placed
+        //here for easy update should the file change from a CSV file do a database.
+               
         public void ReadFile(string csvFilePath, WineItem[] wineCollection)
-        {
+        {// Method to place data into the WineItem array.
 
             StreamReader streamReader = null;
 
@@ -54,7 +56,7 @@ namespace assignment1
 
 
         static void processRecord(string inputString, WineItem[] wineCollection, int index)
-        {
+        {// Internal method used for tacking a single record from the CSV file and placing into the array
             string[] inputParts = inputString.Split(',');
 
             string id = inputParts[0];
@@ -65,7 +67,7 @@ namespace assignment1
         }
 
         public string SearchBy(WineItem[] wineCollection, string searchFor, string propertyName)
-        {
+        {//Generic method to search any of the WineItem properties for the data specified by the user
             bool found = false;
             string listString = "*********************************************************************" + Environment.NewLine;
             foreach (WineItem wineItem in wineCollection)
@@ -90,7 +92,8 @@ namespace assignment1
         }
 
         public void AddWineItem(WineItem[] wineCollection, WineItem wineItemToAdd)
-        {
+        {// Method used to fine a the first index of the WineItem array that does not have a record. Then it will 
+            // create a new WineItem to add the record to at the discovered index. 
             for (int index = 0; index<=4000; index++)
             {
                 if (wineCollection[index] == null)
