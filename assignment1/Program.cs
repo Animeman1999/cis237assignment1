@@ -66,26 +66,19 @@ namespace assignment1
                 switch (choice)
                 {
                     case 1:
-                        ui.SearchByID(WineCollection, ExamineFile);
-
+                        //ui.SearchByID(WineCollection, ExamineFile);
+                        ui.SearchBy(WineCollection, ExamineFile, "ID");
                         break;
                     case 2:
-                        ui.SearchByDescription(WineCollection, ExamineFile);
-
+                        //ui.SearchByDescription(WineCollection, ExamineFile);
+                        ui.SearchBy(WineCollection, ExamineFile, "Description");
                         break;
                     default:
-                        ui.SearchByPack(WineCollection, ExamineFile);
+                        //ui.SearchByPack(WineCollection, ExamineFile);
+                        ui.SearchBy(WineCollection, ExamineFile, "Pack");
                         break;
                 }
 
-                //if (choice == 1)
-                //{
-                //    ui.SearchByID(WineCollection, ExamineFile);
-                //}
-                //else
-                //{
-                //    ui.SearchByDescription(WineCollection, ExamineFile);
-                //}
                 choice = ui.GetUserInputSearch();
             }
         }

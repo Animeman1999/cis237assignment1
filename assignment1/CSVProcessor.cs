@@ -70,77 +70,102 @@ namespace assignment1
             wineCollection[index] = new WineItem(id, description, pack);
         }
 
-        public string SearchByID(WineItem[] wineCollection, string SearchID)
+        public string SearchBy(WineItem[] wineCollection, string searchFor, string propertyName)
         {
             bool found = false;
             string listString = "*********************************************************************" + Environment.NewLine;
             foreach (WineItem wineItem in wineCollection)
             {
+
+                if (wineItem != null)
+                {
+                    
+                    if (searchFor == wineItem.GetType().GetProperty(propertyName).GetValue(wineItem).ToString())
+                    {
+                        found = true;
+                        listString += wineItem + Environment.NewLine;
+                    }
+                }
+            }
+            if (!found)
+            {
+                listString += searchFor + " was not found." + Environment.NewLine;
+            }
+            listString += "*********************************************************************" + Environment.NewLine;
+            return listString;
+        }
+
+        //public string SearchByID(WineItem[] wineCollection, string SearchID)
+        //{
+        //    bool found = false;
+        //    string listString = "*********************************************************************" + Environment.NewLine;
+        //    foreach (WineItem wineItem in wineCollection)
+        //    {
                 
-                if (wineItem != null)
-                {
-                    if (SearchID == wineItem.ID)
-                    {
-                        found = true;
-                        listString += wineItem + Environment.NewLine;
-                    }
-                }
-            }
-            if (!found)
-            {
-                listString += SearchID + " was not found." + Environment.NewLine;
-            }
-            listString += "*********************************************************************" + Environment.NewLine;
-            return listString;
-        }
+        //        if (wineItem != null)
+        //        {
+        //            if (SearchID == wineItem.ID)
+        //            {
+        //                found = true;
+        //                listString += wineItem + Environment.NewLine;
+        //            }
+        //        }
+        //    }
+        //    if (!found)
+        //    {
+        //        listString += SearchID + " was not found." + Environment.NewLine;
+        //    }
+        //    listString += "*********************************************************************" + Environment.NewLine;
+        //    return listString;
+        //}
 
-        public string SearchByDescription(WineItem[] wineCollection, string SearchDescription)
-        {
-            bool found = false;
-            string listString = "*********************************************************************" + Environment.NewLine;
-            foreach (WineItem wineItem in wineCollection)
-            {
+        //public string SearchByDescription(WineItem[] wineCollection, string SearchDescription)
+        //{
+        //    bool found = false;
+        //    string listString = "*********************************************************************" + Environment.NewLine;
+        //    foreach (WineItem wineItem in wineCollection)
+        //    {
 
-                if (wineItem != null)
-                {
-                    if (SearchDescription == wineItem.Description)
-                    {
-                        found = true;
-                        listString += wineItem + Environment.NewLine;
-                    }
-                }
-            }
-            if (!found)
-            {
-                listString += SearchDescription + " was not found." + Environment.NewLine;
-            }
-            listString += "*********************************************************************" + Environment.NewLine;
-            return listString;
-        }
+        //        if (wineItem != null)
+        //        {
+        //            if (SearchDescription == wineItem.Description)
+        //            {
+        //                found = true;
+        //                listString += wineItem + Environment.NewLine;
+        //            }
+        //        }
+        //    }
+        //    if (!found)
+        //    {
+        //        listString += SearchDescription + " was not found." + Environment.NewLine;
+        //    }
+        //    listString += "*********************************************************************" + Environment.NewLine;
+        //    return listString;
+        //}
 
-        public string SearchByPack(WineItem[] wineCollection, string SearchDescription)
-        {
-            bool found = false;
-            string listString = "*********************************************************************" + Environment.NewLine;
-            foreach (WineItem wineItem in wineCollection)
-            {
+        //public string SearchByPack(WineItem[] wineCollection, string SearchDescription)
+        //{
+        //    bool found = false;
+        //    string listString = "*********************************************************************" + Environment.NewLine;
+        //    foreach (WineItem wineItem in wineCollection)
+        //    {
 
-                if (wineItem != null)
-                {
-                    if (SearchDescription == wineItem.Pack)
-                    {
-                        found = true;
-                        listString += wineItem + Environment.NewLine;
-                    }
-                }
-            }
-            if (!found)
-            {
-                listString += SearchDescription + " was not found." + Environment.NewLine;
-            }
-            listString += "*********************************************************************" + Environment.NewLine;
-            return listString;
-        }
+        //        if (wineItem != null)
+        //        {
+        //            if (SearchDescription == wineItem.Pack)
+        //            {
+        //                found = true;
+        //                listString += wineItem + Environment.NewLine;
+        //            }
+        //        }
+        //    }
+        //    if (!found)
+        //    {
+        //        listString += SearchDescription + " was not found." + Environment.NewLine;
+        //    }
+        //    listString += "*********************************************************************" + Environment.NewLine;
+        //    return listString;
+        //}
 
         public void AddWineItem(WineItem[] wineCollection, WineItem wineItemToAdd)
         {

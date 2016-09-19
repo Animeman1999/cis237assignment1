@@ -68,59 +68,77 @@ namespace assignment1
 
         }
 
-        public void SearchByID(WineItem[] WineCollection, CSVProcessor ExamineFile)
+        public void SearchBy(WineItem[] WineCollection, CSVProcessor ExamineFile, string propertyName)
         {
             Console.Write("Enter ID: ");
             string input = Console.ReadLine();
             if (input == "")
             {
-                Console.WriteLine("XXXXXXXXXXXXX");
-                Console.WriteLine("No ID entered");
-                Console.WriteLine("XXXXXXXXXXXXX");
+                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+                Console.WriteLine($"No {propertyName} entered");
+                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXX");
                 Console.WriteLine();
 
             }
             else
             {
-               PrintOutput( ExamineFile.SearchByID(WineCollection, input));
+                PrintOutput(ExamineFile.SearchBy(WineCollection, input, propertyName));
             }
         }
 
-        public void SearchByDescription(WineItem[] WineCollection, CSVProcessor ExamineFile)
-        {
-            Console.Write("Enter Description: ");
-            string input = Console.ReadLine();
-            if (input == "")
-            {
-                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXX");
-                Console.WriteLine("No Descriptioin entered");
-                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXX");
-                Console.WriteLine();
+        //public void SearchByID(WineItem[] WineCollection, CSVProcessor ExamineFile)
+        //{
+        //    Console.Write("Enter ID: ");
+        //    string input = Console.ReadLine();
+        //    if (input == "")
+        //    {
+        //        Console.WriteLine("XXXXXXXXXXXXX");
+        //        Console.WriteLine("No ID entered");
+        //        Console.WriteLine("XXXXXXXXXXXXX");
+        //        Console.WriteLine();
 
-            }
-            else
-            {
-                PrintOutput(ExamineFile.SearchByDescription(WineCollection, input));
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //       PrintOutput( ExamineFile.SearchByID(WineCollection, input));
+        //    }
+        //}
 
-        public void SearchByPack(WineItem[] WineCollection, CSVProcessor ExamineFile)
-        {
-            Console.Write("Enter Pack: ");
-            string input = Console.ReadLine();
-            if (input == "")
-            {
-                Console.WriteLine("XXXXXXXXXXXXXXX");
-                Console.WriteLine("No Pack entered");
-                Console.WriteLine("XXXXXXXXXXXXXXX");
-                Console.WriteLine();
+        //public void SearchByDescription(WineItem[] WineCollection, CSVProcessor ExamineFile)
+        //{
+        //    Console.Write("Enter Description: ");
+        //    string input = Console.ReadLine();
+        //    if (input == "")
+        //    {
+        //        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXX");
+        //        Console.WriteLine("No Descriptioin entered");
+        //        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXX");
+        //        Console.WriteLine();
 
-            }
-            else
-            {
-                PrintOutput(ExamineFile.SearchByPack(WineCollection, input));
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        PrintOutput(ExamineFile.SearchByDescription(WineCollection, input));
+        //    }
+        //}
+
+        //public void SearchByPack(WineItem[] WineCollection, CSVProcessor ExamineFile)
+        //{
+        //    Console.Write("Enter Pack: ");
+        //    string input = Console.ReadLine();
+        //    if (input == "")
+        //    {
+        //        Console.WriteLine("XXXXXXXXXXXXXXX");
+        //        Console.WriteLine("No Pack entered");
+        //        Console.WriteLine("XXXXXXXXXXXXXXX");
+        //        Console.WriteLine();
+
+        //    }
+        //    else
+        //    {
+        //        PrintOutput(ExamineFile.SearchByPack(WineCollection, input));
+        //    }
+        //}
 
         public void AddWine(WineItem[] WineCollection, CSVProcessor ExamineFile)
         {
