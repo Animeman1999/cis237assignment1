@@ -54,7 +54,12 @@ namespace assignment1
             
         }
 
-        static void processRecord(string inputString, WineItemCollection[] wineCollection, int index)
+        //internal void ReadFile(string cSV_FILE_PATH, WineItem[] wineCollection)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        static void processRecord(string inputString, WineItem[] wineCollection, int index)
         {
             string[] inputParts = inputString.Split(',');
 
