@@ -12,9 +12,7 @@ using System.IO;
 namespace assignment1
 {
     class CSVProcessor
-    {
-
-        
+    {       
         public void ReadFile(string csvFilePath, WineItem[] wineCollection)
         {
 
@@ -54,10 +52,6 @@ namespace assignment1
             
         }
 
-        //internal void ReadFile(string cSV_FILE_PATH, WineItem[] wineCollection)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         static void processRecord(string inputString, WineItem[] wineCollection, int index)
         {
@@ -94,78 +88,6 @@ namespace assignment1
             listString += "*********************************************************************" + Environment.NewLine;
             return listString;
         }
-
-        //public string SearchByID(WineItem[] wineCollection, string SearchID)
-        //{
-        //    bool found = false;
-        //    string listString = "*********************************************************************" + Environment.NewLine;
-        //    foreach (WineItem wineItem in wineCollection)
-        //    {
-                
-        //        if (wineItem != null)
-        //        {
-        //            if (SearchID == wineItem.ID)
-        //            {
-        //                found = true;
-        //                listString += wineItem + Environment.NewLine;
-        //            }
-        //        }
-        //    }
-        //    if (!found)
-        //    {
-        //        listString += SearchID + " was not found." + Environment.NewLine;
-        //    }
-        //    listString += "*********************************************************************" + Environment.NewLine;
-        //    return listString;
-        //}
-
-        //public string SearchByDescription(WineItem[] wineCollection, string SearchDescription)
-        //{
-        //    bool found = false;
-        //    string listString = "*********************************************************************" + Environment.NewLine;
-        //    foreach (WineItem wineItem in wineCollection)
-        //    {
-
-        //        if (wineItem != null)
-        //        {
-        //            if (SearchDescription == wineItem.Description)
-        //            {
-        //                found = true;
-        //                listString += wineItem + Environment.NewLine;
-        //            }
-        //        }
-        //    }
-        //    if (!found)
-        //    {
-        //        listString += SearchDescription + " was not found." + Environment.NewLine;
-        //    }
-        //    listString += "*********************************************************************" + Environment.NewLine;
-        //    return listString;
-        //}
-
-        //public string SearchByPack(WineItem[] wineCollection, string SearchDescription)
-        //{
-        //    bool found = false;
-        //    string listString = "*********************************************************************" + Environment.NewLine;
-        //    foreach (WineItem wineItem in wineCollection)
-        //    {
-
-        //        if (wineItem != null)
-        //        {
-        //            if (SearchDescription == wineItem.Pack)
-        //            {
-        //                found = true;
-        //                listString += wineItem + Environment.NewLine;
-        //            }
-        //        }
-        //    }
-        //    if (!found)
-        //    {
-        //        listString += SearchDescription + " was not found." + Environment.NewLine;
-        //    }
-        //    listString += "*********************************************************************" + Environment.NewLine;
-        //    return listString;
-        //}
 
         public void AddWineItem(WineItem[] wineCollection, WineItem wineItemToAdd)
         {

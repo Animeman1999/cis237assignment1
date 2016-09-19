@@ -62,23 +62,18 @@ namespace assignment1
             int choice = ui.GetUserInputSearch();
             while (choice != 4)
             {
-
                 switch (choice)
                 {
                     case 1:
-                        //ui.SearchByID(WineCollection, ExamineFile);
                         ui.SearchBy(WineCollection, ExamineFile, "ID");
                         break;
                     case 2:
-                        //ui.SearchByDescription(WineCollection, ExamineFile);
                         ui.SearchBy(WineCollection, ExamineFile, "Description");
                         break;
                     default:
-                        //ui.SearchByPack(WineCollection, ExamineFile);
                         ui.SearchBy(WineCollection, ExamineFile, "Pack");
                         break;
                 }
-
                 choice = ui.GetUserInputSearch();
             }
         }
