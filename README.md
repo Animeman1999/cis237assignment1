@@ -81,6 +81,7 @@ Suggestion/Hints:
 
 ## Outside Resources Used
 http://stackoverflow.com/questions/1370158/console-bufferheight-i-cant-see-scroll-to-see-all-the-console-output-with-con
+http://stackoverflow.com/questions/2905187/accessing-object-property-as-string-and-setting-its-value
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
