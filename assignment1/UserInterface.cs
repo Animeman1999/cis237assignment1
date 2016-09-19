@@ -52,7 +52,7 @@ namespace assignment1
 
             String _input = Console.ReadLine();
 
-            while (_input != "1" && _input != "2" && _input != "3")
+            while (_input != "1" && _input != "2" && _input != "3" && _input != "4")
             {
                 Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
                 Console.WriteLine("Not a valid entry, please make another choice");
@@ -101,6 +101,24 @@ namespace assignment1
             else
             {
                 PrintOutput(ExamineFile.SearchByDescription(WineCollection, input));
+            }
+        }
+
+        public void SearchByPack(WineItem[] WineCollection, CSVProcessor ExamineFile)
+        {
+            Console.Write("Enter Pack: ");
+            string input = Console.ReadLine();
+            if (input == "")
+            {
+                Console.WriteLine("XXXXXXXXXXXXXXX");
+                Console.WriteLine("No Pack entered");
+                Console.WriteLine("XXXXXXXXXXXXXXX");
+                Console.WriteLine();
+
+            }
+            else
+            {
+                PrintOutput(ExamineFile.SearchByPack(WineCollection, input));
             }
         }
 
@@ -190,7 +208,8 @@ namespace assignment1
             Console.WriteLine("Menu: Search for Wine");
             Console.WriteLine("1) Search by ID");
             Console.WriteLine("2) Search by Discription");
-            Console.WriteLine("3) Return to Main Menu");
+            Console.WriteLine("3) Search by Pack");
+            Console.WriteLine("4) Return to Main Menu");
             Console.Write("Press the number of the menu item: ");
 
         }

@@ -118,6 +118,30 @@ namespace assignment1
             return listString;
         }
 
+        public string SearchByPack(WineItem[] wineCollection, string SearchDescription)
+        {
+            bool found = false;
+            string listString = "*********************************************************************" + Environment.NewLine;
+            foreach (WineItem wineItem in wineCollection)
+            {
+
+                if (wineItem != null)
+                {
+                    if (SearchDescription == wineItem.Pack)
+                    {
+                        found = true;
+                        listString += wineItem + Environment.NewLine;
+                    }
+                }
+            }
+            if (!found)
+            {
+                listString += SearchDescription + " was not found." + Environment.NewLine;
+            }
+            listString += "*********************************************************************" + Environment.NewLine;
+            return listString;
+        }
+
         public void AddWineItem(WineItem[] wineCollection, WineItem wineItemToAdd)
         {
             for (int index = 0; index<=4000; index++)

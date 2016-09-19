@@ -60,16 +60,32 @@ namespace assignment1
         {
             UserInterface ui = new UserInterface();
             int choice = ui.GetUserInputSearch();
-            while (choice != 3)
+            while (choice != 4)
             {
-                if (choice == 1)
+
+                switch (choice)
                 {
-                    ui.SearchByID(WineCollection, ExamineFile);
+                    case 1:
+                        ui.SearchByID(WineCollection, ExamineFile);
+
+                        break;
+                    case 2:
+                        ui.SearchByDescription(WineCollection, ExamineFile);
+
+                        break;
+                    default:
+                        ui.SearchByPack(WineCollection, ExamineFile);
+                        break;
                 }
-                else
-                {
-                    ui.SearchByDescription(WineCollection, ExamineFile);
-                }
+
+                //if (choice == 1)
+                //{
+                //    ui.SearchByID(WineCollection, ExamineFile);
+                //}
+                //else
+                //{
+                //    ui.SearchByDescription(WineCollection, ExamineFile);
+                //}
                 choice = ui.GetUserInputSearch();
             }
         }
