@@ -70,7 +70,7 @@ namespace assignment1
 
         public void SearchBy(WineItem[] WineCollection, CSVProcessor ExamineFile, string propertyName)
         {
-            Console.Write("Enter ID: ");
+            Console.Write($"Enter {propertyName}: ");
             string input = Console.ReadLine();
             if (input == "")
             {
@@ -149,21 +149,23 @@ namespace assignment1
             Console.WriteLine("Welcome to the wine list program.");
             Console.WriteLine("To start the program you must load the wine list.");
             Console.WriteLine();
-            Console.WriteLine("Menu:");
+            Console.WriteLine("#############-Load Menu-#############");
             Console.WriteLine("1) Load Wine List");
             Console.WriteLine("2) Exit the program");
+            Console.WriteLine("#############-Load Menu-#############");
             Console.Write("Press the number of the menu item: ");
-
         }
 
         private void PrintMenu()
         {
             Console.WriteLine();
-            Console.WriteLine("Menu:");
+            Console.WriteLine("#############-Main Menu-#############");
             Console.WriteLine("1) Print Wine List");
             Console.WriteLine("2) Search for Wine");
             Console.WriteLine("3) Add a new Wine");
             Console.WriteLine("4) Exit the program");
+            Console.WriteLine("#############-Main Menu-#############");
+
             Console.Write("Press the number of the menu item: ");
 
         }
@@ -171,11 +173,12 @@ namespace assignment1
         private void PrintSubMenu()
         {
             Console.WriteLine();
-            Console.WriteLine("Menu: Search for Wine");
+            Console.WriteLine("############-Search Menu-############");
             Console.WriteLine("1) Search by ID");
             Console.WriteLine("2) Search by Discription");
             Console.WriteLine("3) Search by Pack");
             Console.WriteLine("4) Return to Main Menu");
+            Console.WriteLine("############-Search Menu-############");
             Console.Write("Press the number of the menu item: ");
 
         }
