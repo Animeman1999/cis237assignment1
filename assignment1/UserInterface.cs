@@ -13,8 +13,6 @@ namespace assignment1
     class UserInterface
     {// Class to handle all input and output for the program
 
-        bool winesLoaded = false;
-
         public int GetUserStartMenu()
         {
             this.StartMenu();
@@ -105,6 +103,58 @@ namespace assignment1
                 PrintOutput(ExamineFile.SearchByDescription(WineCollection, input));
             }
         }
+
+        public void AddWine(WineItem[] WineCollection, CSVProcessor ExamineFile)
+        {
+            Console.Write("Enter Wine ID: ");
+            string idInput = Console.ReadLine();
+            if (idInput == "")
+            {
+                Console.WriteLine("XXXXXXXXXXXXXXXXXX");
+                Console.WriteLine("No Wine ID entered");
+                Console.WriteLine("XXXXXXXXXXXXXXXXXX");
+                Console.WriteLine();
+
+            }
+            else
+            {
+                Console.Write("Enter Wine Description: ");
+                string descriptionInput = Console.ReadLine();
+                if (descriptionInput == "")
+                {
+                    Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXX");
+                    Console.WriteLine("No Wine Description entered");
+                    Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXX");
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.Write("Enter Wine Description: ");
+                    string packInput = Console.ReadLine();
+                    if (packInput == "")
+                    {
+                        Console.WriteLine("XXXXXXXXXXXXXXXXXXXX");
+                        Console.WriteLine("No Wine Pack entered");
+                        Console.WriteLine("XXXXXXXXXXXXXXXXXXXX");
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        WineItem wineItemToAdd = new WineItem();
+                        wineItemToAdd.ID = idInput;
+                        wineItemToAdd.Description = descriptionInput;
+                        wineItemToAdd.Pack = packInput;
+
+                        ExamineFile.AddWineItem(WineCollection, wineItemToAdd);
+                        Console.WriteLine("**************************************************************************");
+                        Console.WriteLine(wineItemToAdd + " has been added to the file");
+                        Console.WriteLine("**************************************************************************");
+                        Console.WriteLine();    
+                    }
+                }
+            }
+        }
+
         public void PrintOutput (string printOutput)
         {
             Console.WriteLine(printOutput);

@@ -117,5 +117,17 @@ namespace assignment1
             listString += "*********************************************************************" + Environment.NewLine;
             return listString;
         }
+
+        public void AddWineItem(WineItem[] wineCollection, WineItem wineItemToAdd)
+        {
+            for (int index = 0; index<=4000; index++)
+            {
+                if (wineCollection[index] == null)
+                {
+                    wineCollection[index] = new WineItem(wineItemToAdd.ID, wineItemToAdd.Description, wineItemToAdd.Pack);
+                    index = 5000;
+                }
+            }
+        }
     }
 }

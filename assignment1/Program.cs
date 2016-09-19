@@ -48,7 +48,7 @@ namespace assignment1
                             SearchForWine(wineCollection, loadRecords);
                             break;
                         default:
-
+                            ui.AddWine(wineCollection, loadRecords);
                             break;
                     }
                     choice = ui.GetUserInputMenu();
