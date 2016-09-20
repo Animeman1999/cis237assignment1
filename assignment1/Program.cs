@@ -29,6 +29,8 @@ namespace assignment1
 
             UserInterface ui = new UserInterface();
 
+
+            // Logic for the Start Menu found in UserInterface.cs
             int loadChoice = ui.GetUserStartMenu();
 
             if (loadChoice == 1)
@@ -37,6 +39,7 @@ namespace assignment1
                 loadRecords.ReadFile(CSV_FILE_PATH, wineCollection);
                 ui.PrintOutput("********Wines have been loaded********");
 
+                //Logic for the Maine Menu found in UserInterface.cs
                 int choice = ui.GetUserInputMenu();
 
                 while (choice != 4)
@@ -59,7 +62,8 @@ namespace assignment1
 
         }
         static void SearchForWine(WineItem[] WineCollection, CSVProcessor ExamineFile)
-        {//  Method to hande the logic used in the SearchBy method found in UserInterface.cs
+        {   // Logic for the Search Menu found in UserInterface.cs
+            
             UserInterface ui = new UserInterface();
             int choice = ui.GetUserInputSearch();
             while (choice != 4)
