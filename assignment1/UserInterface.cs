@@ -27,23 +27,23 @@ namespace assignment1
             return Int16.Parse(_input);
         }
 
-        public int GetUserInputMenu()
+        public int GetUserInputMainMenu()
         {
-            this.PrintInputMenu();
+            this.PrintMainMenu();
             String _input = Console.ReadLine();
             while (_input != "1" && _input != "2" && _input !="3" && _input != "4")
             {
                 Console.WriteLine(WriteInvalidEntry());
-                this.PrintInputMenu();
+                this.PrintMainMenu();
                 _input = Console.ReadLine();
             }
             return Int16.Parse(_input);
         }
 
 
-        public int GetUserInputSearch()
+        public int GetUserInputSearchMenu()
         {
-            this.PrintSubMenu();
+            this.PrintSearchMenu();
 
             String _input = Console.ReadLine();
 
@@ -51,7 +51,7 @@ namespace assignment1
             {
                 Console.WriteLine(WriteInvalidEntry());
 
-                this.PrintSubMenu();
+                this.PrintSearchMenu();
 
                 _input = Console.ReadLine();
             }
@@ -69,17 +69,21 @@ namespace assignment1
             return invalidEntry;
         }
 
-        public void SearchBy(WineItem[] WineCollection, CSVProcessor ExamineFile, string propertyName)
+        private string WriteInvalidSpecificEntry(string propertyName)
         {
+            string errorMessage = "XXXXXXXXXXXXXXXXXXXXXXXXXX" + Environment.NewLine +
+                                    $"No {propertyName} entered" + Environment.NewLine +
+                                    "XXXXXXXXXXXXXXXXXXXXXXXXXX";
+            return errorMessage;
+        }
+
+        public void SearchBy(WineItem[] WineCollection, CSVProcessor ExamineFile, string propertyName)
+        {               
             Console.Write($"Enter {propertyName}: ");
             string input = Console.ReadLine();
             if (input == "")
             {
-                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXX");
-                Console.WriteLine($"No {propertyName} entered");
-                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXX");
-                Console.WriteLine();
-
+                Console.WriteLine( WriteInvalidSpecificEntry(propertyName));
             }
             else
             {
@@ -94,39 +98,42 @@ namespace assignment1
             string idInput = Console.ReadLine();
             if (idInput == "")
             {
-                Console.WriteLine(WriteInvalidEntry());
+                Console.WriteLine(WriteInvalidSpecificEntry("Wine Id"));
 
             }
             else
             {
                 Console.Write("Enter Wine Description: ");
                 string descriptionInput = Console.ReadLine();
-                if (descriptionInput == "")
+                while (descriptionInput == "")
                 {
-                    Console.WriteLine(WriteInvalidEntry());
-                }
-                else
-                {
+                    Console.WriteLine(WriteInvalidSpecificEntry("Wine Description"));
                     Console.Write("Enter Wine Description: ");
-                    string packInput = Console.ReadLine();
-                    if (packInput == "")
-                    {
-                        Console.WriteLine(WriteInvalidEntry());
-                    }
-                    else
-                    {
-                        WineItem wineItemToAdd = new WineItem();
-                        wineItemToAdd.ID = idInput;
-                        wineItemToAdd.Description = descriptionInput;
-                        wineItemToAdd.Pack = packInput;
-
-                        wineProcessor.AddWineItem(WineCollection, wineItemToAdd);
-                        Console.WriteLine("**************************************************************************");
-                        Console.WriteLine(wineItemToAdd + " has been added to the file");
-                        Console.WriteLine("**************************************************************************");
-                        Console.WriteLine();    
-                    }
+                    descriptionInput = Console.ReadLine();
                 }
+                
+                
+                Console.Write("Enter Wine Pack: ");
+                string packInput = Console.ReadLine();
+                while (packInput == "")
+                {
+                    Console.WriteLine(WriteInvalidSpecificEntry("Wine Pack"));
+                    Console.Write("Enter Wine Pack: ");
+                    packInput = Console.ReadLine();
+                }
+                
+                WineItem wineItemToAdd = new WineItem();
+                wineItemToAdd.ID = idInput;
+                wineItemToAdd.Description = descriptionInput;
+                wineItemToAdd.Pack = packInput;
+
+                wineProcessor.AddWineItem(WineCollection, wineItemToAdd);
+                Console.WriteLine("**************************************************************************");
+                Console.WriteLine(wineItemToAdd + " has been added to the file");
+                Console.WriteLine("**************************************************************************");
+                Console.WriteLine();    
+                
+                
             }
         }
 
@@ -148,7 +155,7 @@ namespace assignment1
             Console.Write("Press the number of the menu item: ");
         }
 
-        private void PrintInputMenu()
+        private void PrintMainMenu()
         {
             Console.WriteLine();
             Console.WriteLine("#############-Main Menu-#############");
@@ -162,7 +169,7 @@ namespace assignment1
 
         }
 
-        private void PrintSubMenu()
+        private void PrintSearchMenu()
         {
             Console.WriteLine();
             Console.WriteLine("############-Search Menu-############");

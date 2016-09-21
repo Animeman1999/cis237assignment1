@@ -40,7 +40,7 @@ namespace assignment1
                 ui.PrintOutput("********Wines have been loaded********");
 
                 //Logic for the Maine Menu found in UserInterface.cs
-                int choice = ui.GetUserInputMenu();
+                int choice = ui.GetUserInputMainMenu();
 
                 while (choice != 4)
                 {
@@ -56,16 +56,21 @@ namespace assignment1
                             ui.AddWine(wineCollection, loadRecords);
                             break;
                     }
-                    choice = ui.GetUserInputMenu();
+                    choice = ui.GetUserInputMainMenu();
                 }
             }
 
         }
+        /// <summary>
+        /// Logic used for the PrintSearchMenu found the UserInterface.cs
+        /// </summary>
+        /// <param name="WineCollection">WineItem[]</param>
+        /// <param name="ExamineFile">CSVProcessor</param>
         static void SearchForWine(WineItem[] WineCollection, CSVProcessor ExamineFile)
         {   // Logic for the Search Menu found in UserInterface.cs
             
             UserInterface ui = new UserInterface();
-            int choice = ui.GetUserInputSearch();
+            int choice = ui.GetUserInputSearchMenu();
             while (choice != 4)
             {
                 switch (choice)
@@ -80,7 +85,7 @@ namespace assignment1
                         ui.SearchBy(WineCollection, ExamineFile, "Pack");
                         break;
                 }
-                choice = ui.GetUserInputSearch();
+                choice = ui.GetUserInputSearchMenu();
             }
         }
 
