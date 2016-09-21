@@ -31,7 +31,7 @@ namespace assignment1
                 if (wineItem != null)
                 {
 
-                    if (searchFor == wineItem.GetType().GetProperty(propertyName).GetValue(wineItem).ToString())
+                    if (wineItem.GetType().GetProperty(propertyName).GetValue(wineItem).ToString().ToLower().Contains(searchFor.ToLower()))
                     {
                         found = true;
                         listString += wineItem + Environment.NewLine;
