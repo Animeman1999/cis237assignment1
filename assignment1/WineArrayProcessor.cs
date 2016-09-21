@@ -30,7 +30,8 @@ namespace assignment1
 
                 if (wineItem != null)
                 {
-
+                    //Finds the value in the property type(propertyName) and coverts it to lower case than compares if the searchFor value that also has been converted to lower case was in the property.
+                    //In simpler terms it sees if searchFor is contianed in WineItem.propertName -- propertyName being the name of the Property in this case either ID, Description, or Pack.
                     if (wineItem.GetType().GetProperty(propertyName).GetValue(wineItem).ToString().ToLower().Contains(searchFor.ToLower()))
                     {
                         found = true;
