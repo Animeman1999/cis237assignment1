@@ -12,22 +12,25 @@ using System.Threading.Tasks;
 namespace assignment1
 {
     class Program
-    {//This file will hande instansciating the various classes used for this program and to handle
-        // the logic from the UserInterface class.
+    {//This file will handle the logic needed to run the menus in the userInterface.
 
         static void Main(string[] args)
         {
-            const String CSV_FILE_PATH = "../../../datafiles/WineList.csv";
+            //****************************
+            //Constants
+            //****************************
+            const String CSV_FILE_PATH = "../../../datafiles/WineList.csv";//Holds path and file name of the csv file
 
-            WineItemCollection wineItemCollection = new WineItemCollection();
+            //****************************
+            //Class Variables
+            //****************************
 
+            WineItemCollection wineItemCollection = new WineItemCollection();//Creates the array to hold WineItems by creating an instance of the class
             var wineCollection = wineItemCollection.CreateWineCollection();
 
-            CSVProcessor loadRecords = new CSVProcessor();
+            CSVProcessor loadRecords = new CSVProcessor();//Creates an instance of the CSVProcessor class to process the CSV file.
 
-            WineItem wineItem = new WineItem();
-
-            UserInterface ui = new UserInterface();
+            UserInterface ui = new UserInterface();//Instance of the UserInterface class to run the menus'
 
 
             // Logic for the Start Menu found in UserInterface.cs
@@ -61,13 +64,12 @@ namespace assignment1
             }
         }
         /// <summary>
-        /// Logic used for the PrintSearchMenu found the UserInterface.cs
+        /// Logic used for the PrintSearchMenu found in UserInterface.cs
         /// </summary>
         /// <param name="WineCollection">WineItem[]</param>
         /// <param name="ExamineFile">CSVProcessor</param>
         static void SearchForWine(WineItem[] WineCollection)
-        {   // Logic for the Search Menu found in UserInterface.cs
-
+        {  
             WineItem winItem = new WineItem("1","2","3");
 
 

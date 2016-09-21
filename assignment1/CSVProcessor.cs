@@ -12,8 +12,7 @@ using System.IO;
 namespace assignment1
 {
     class CSVProcessor
-    {//This class will do all the manipulation being done to the WineItem array. The logic is placed
-        //here for easy update should the file change from a CSV file do a database.
+    {//This class will do all the manipulation being done to the WineItem array in conjuntion with the CSV file.
                
             /// <summary>
             /// Reads data from CSV file and loads it into the array
@@ -57,7 +56,7 @@ namespace assignment1
         }
 
         /// <summary>
-        /// Creats a single record and adds it into the array
+        /// Creates a single record and adds it into the array
         /// </summary>
         /// <param name="inputString">string</param>
         /// <param name="wineCollection">WineItem</param>

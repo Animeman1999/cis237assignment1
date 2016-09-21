@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 namespace assignment1
 {
     class UserInterface
-    {// Class to handle all input and output for the program
+    {// Methods to handle all input and output for the program
 
         WineArrayProcessor wineProcessor = new WineArrayProcessor();
 
         /// <summary>
         /// Handles input and output of the Start Menu
         /// </summary>
-        /// <returns></returns>
+        /// <returns>int</returns>
         public int GetUserStartMenu()
         {
             this.LoadMenu();
@@ -59,7 +59,7 @@ namespace assignment1
         /// <summary>
         /// Handles the input and output of the Search Menu
         /// </summary>
-        /// <returns></returns>
+        /// <returns>int</returns>
         public int GetUserInputSearchMenu()
         {
             this.PrintSearchMenu();
@@ -81,7 +81,7 @@ namespace assignment1
         /// <summary>
         /// Generic invalid entry error message
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         private string WriteInvalidEntry()
         {
             string invalidEntry;
@@ -95,7 +95,7 @@ namespace assignment1
         /// Specific invalid entry error message
         /// </summary>
         /// <param name="propertyName">string</param>
-        /// <returns></returns>
+        /// <returns>string</returns>
         private string WriteInvalidSpecificEntry(string propertyName)
         {
             string errorMessage = "XXXXXXXXXXXXXXXXXXXXXXXXXX" + Environment.NewLine +
@@ -105,7 +105,7 @@ namespace assignment1
         }
 
         /// <summary>
-        /// Inputs porperty to search and call the function to do so and outputs the results
+        /// Searches the property for a value input by the user and outputs if found
         /// </summary>
         /// <param name="WineCollection">WineItem[]</param>
         /// <param name="propertyName">string</param>
@@ -124,7 +124,7 @@ namespace assignment1
         }
 
         /// <summary>
-        /// Input sequence to create a new WineItem than calls method to add to WineItem array.
+        /// Input sequence to create a new WineItem that calls a method to add it to the WineItem array.
         /// </summary>
         /// <param name="WineCollection">WineItem[]</param>
         public void AddWine(WineItem[] WineCollection)
@@ -181,6 +181,7 @@ namespace assignment1
             Console.BufferHeight = Int16.MaxValue - 1;
             Console.WriteLine(printOutput);
         }
+
         /// <summary>
         /// Outputs the Load Menu to the console
         /// </summary>
@@ -208,10 +209,9 @@ namespace assignment1
             Console.WriteLine("3) Add a new Wine");
             Console.WriteLine("4) Exit the program");
             Console.WriteLine("#############-Main Menu-#############");
-
             Console.Write("Press the number of the menu item: ");
-
         }
+
         /// <summary>
         /// Outputs the Search Menu to the console
         /// </summary>
@@ -225,14 +225,13 @@ namespace assignment1
             Console.WriteLine("4) Return to Main Menu");
             Console.WriteLine("############-Search Menu-############");
             Console.Write("Press the number of the menu item: ");
-
         }
 
         /// <summary>
-        /// Creates the wine list into a string for output
+        /// Creates the wine list into a string to be used for output
         /// </summary>
-        /// <param name="WineCollection"></param>
-        /// <returns></returns>
+        /// <param name="WineCollection">WineItem[]</param>
+        /// <returns>string</returns>
         public string CreateListString(WineItem[] WineCollection)
         {
             string headingString = Environment.NewLine + 

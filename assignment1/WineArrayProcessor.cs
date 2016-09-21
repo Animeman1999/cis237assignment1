@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace assignment1
 {
     class WineArrayProcessor
-    {   //Handle all the processing of the WineItem array that is done internally for the program
+    {   //Methods to handle all the processing of the WineItem array that is done internally for the program
 
         /// <summary>
         /// Searches the array for a value in the spicified property.
@@ -20,7 +20,7 @@ namespace assignment1
         /// <param name="wineCollection">WineItem[]</param>
         /// <param name="searchFor">string</param>
         /// <param name="propertyName">string</param>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string SearchBy(WineItem[] wineCollection, string searchFor, string propertyName)
         {//Generic method to search any of the WineItem properties for the data specified by the user
             bool found = false;
@@ -30,9 +30,12 @@ namespace assignment1
 
                 if (wineItem != null)
                 {
-                    //Finds the value in the property type(propertyName) and coverts it to lower case than compares if the searchFor value that also has been converted to lower case was in the property.
-                    //In simpler terms it sees if searchFor is contianed in WineItem.propertName -- propertyName being the name of the Property in this case either ID, Description, or Pack.
-                    if (wineItem.GetType().GetProperty(propertyName).GetValue(wineItem).ToString().ToLower().Contains(searchFor.ToLower()))
+                    //String to hold the value held in the property converted to lowercase. The various Gets are used to enable any property to be passed in.
+                    string propertyValue = wineItem.GetType().GetProperty(propertyName).GetValue(wineItem).ToString().ToLower();
+
+                    //String to hold the value of the searchFor converted to lowercase.
+                    string searchValue = searchFor.ToString();
+                    if (propertyValue.Contains(searchValue))
                     {
                         found = true;
                         listString += wineItem + Environment.NewLine;
@@ -53,7 +56,7 @@ namespace assignment1
         /// <param name="wineCollection">WineItem[]</param>
         /// <param name="wineItemToAdd">WineItem</param>
         public void AddWineItem(WineItem[] wineCollection, WineItem wineItemToAdd)
-        {// Method used to fine a the first index of the WineItem array that does not have a record. Then it will 
+        {// Method used to finf the first index of the WineItem array that does not have a record. Then it will 
             // create a new WineItem to add the record to at the discovered index. 
             for (int index = 0; index <= 4000; index++)
             {

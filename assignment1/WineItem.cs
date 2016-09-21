@@ -51,26 +51,26 @@ namespace assignment1
 
         public WineItem()
         {
-            //Default Parameter Constructor added in per speicifications
+            //Default Parameter Constructor
         }
 
         //*********************************
         //Methods
         //*********************************
 
-            /// <summary>
-            /// Creates the overide string for each WineItem 
-            /// </summary>
-            /// <returns></returns>
+        /// <summary>
+        /// Creates the overide string for each WineItem 
+        /// </summary>
+        /// <returns>string</returns>
         private string CreateOverideString()
         {
             string overideString = $"{this._description} Wine ID: {this._id}; Sold in: {this._pack}";
             return overideString;
         }
         /// <summary>
-        /// Creates the overide each WineItem 
+        /// Creates the overide of ToString() for each WineItem 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public override string ToString()
         {
             return CreateOverideString();
