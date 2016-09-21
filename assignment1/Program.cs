@@ -67,7 +67,10 @@ namespace assignment1
         /// <param name="ExamineFile">CSVProcessor</param>
         static void SearchForWine(WineItem[] WineCollection)
         {   // Logic for the Search Menu found in UserInterface.cs
-            
+
+            WineItem winItem = new WineItem("1","2","3");
+
+
             UserInterface ui = new UserInterface();
             int choice = ui.GetUserInputSearchMenu();
             while (choice != 4)
@@ -75,13 +78,13 @@ namespace assignment1
                 switch (choice)
                 {
                     case 1:
-                        ui.SearchBy(WineCollection, "ID");
+                        ui.SearchBy(WineCollection, nameof(winItem.ID));
                         break;
                     case 2:
-                        ui.SearchBy(WineCollection, "Description");
+                        ui.SearchBy(WineCollection, nameof(winItem.Description));
                         break;
                     default:
-                        ui.SearchBy(WineCollection, "Pack");
+                        ui.SearchBy(WineCollection, nameof(winItem.Pack));
                         break;
                 }
                 choice = ui.GetUserInputSearchMenu();
