@@ -21,12 +21,12 @@ namespace assignment1
         /// <returns></returns>
         public int GetUserStartMenu()
         {
-            this.StartMenu();
+            this.LoadMenu();
             String _input = Console.ReadLine();
             while (_input != "1" && _input != "2")
             {
                 Console.WriteLine(WriteInvalidEntry());
-                this.StartMenu();
+                this.LoadMenu();
                 _input = Console.ReadLine();
             }
             return Int16.Parse(_input);
@@ -94,11 +94,10 @@ namespace assignment1
         }
 
         /// <summary>
-        /// Takes the array and searches by which ever property is passed in.
+        /// Inputs porperty to search and call the function to do so and outputs the results
         /// </summary>
-        /// <param name="WineCollection"></param>
-        /// <param name="ExamineFile"></param>
-        /// <param name="propertyName"></param>
+        /// <param name="WineCollection">WineItem[]</param>
+        /// <param name="propertyName">string</param>
         public void SearchBy(WineItem[] WineCollection, string propertyName)
         {               
             Console.Write($"Enter {propertyName}: ");
@@ -113,8 +112,11 @@ namespace assignment1
             }
         }
 
-
-        public void AddWine(WineItem[] WineCollection, CSVProcessor ExamineFile)
+        /// <summary>
+        /// Input sequence to create a new WineItem than calls method to add to WineItem array.
+        /// </summary>
+        /// <param name="WineCollection">WineItem[]</param>
+        public void AddWine(WineItem[] WineCollection)
         {
             Console.Write("Enter Wine ID: ");
             string idInput = Console.ReadLine();
@@ -159,13 +161,19 @@ namespace assignment1
             }
         }
 
+        /// <summary>
+        /// Method to ouput any string to the console
+        /// </summary>
+        /// <param name="printOutput">string</param>
         public void PrintOutput (string printOutput)
         {
             Console.BufferHeight = Int16.MaxValue - 1;
             Console.WriteLine(printOutput);
         }
-
-        private void StartMenu()
+        /// <summary>
+        /// Outputs the Load Menu to the console
+        /// </summary>
+        private void LoadMenu()
         {
             Console.WriteLine("Welcome to the wine list program.");
             Console.WriteLine("To start the program you must load the wine list.");
