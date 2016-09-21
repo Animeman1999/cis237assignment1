@@ -83,6 +83,13 @@ Suggestion/Hints:
 http://stackoverflow.com/questions/1370158/console-bufferheight-i-cant-see-scroll-to-see-all-the-console-output-with-con
 http://stackoverflow.com/questions/2905187/accessing-object-property-as-string-and-setting-its-value
 http://stackoverflow.com/questions/2820660/get-name-of-property-as-a-string
+https://msdn.microsoft.com/en-us/library/471w8d85(v=vs.110).aspx    Used for reading a single keystroke from console.
 
 ## Known Problems, Issues, And/Or Errors in the Program
 None
+
+## Feature Notes
+* Menus are driven by keystrokes
+* Sub Menus are used to control the users orders of actions
+* When entering a new wine item if a carriage return is entered on the first item (ID) it will return the user to the prvious menu.  This is to allow the user who accidently started the process to exit out. If an ID is entered the user must finish entering all of the data for that wine item.
+* Search will find a substring of the property and is not case sensitive. 
