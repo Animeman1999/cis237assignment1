@@ -14,6 +14,11 @@ namespace assignment1
     {// Class to handle all input and output for the program
 
         WineArrayProcessor wineProcessor = new WineArrayProcessor();
+
+        /// <summary>
+        /// Handles input and output of the Start Menu
+        /// </summary>
+        /// <returns></returns>
         public int GetUserStartMenu()
         {
             this.StartMenu();
@@ -26,7 +31,10 @@ namespace assignment1
             }
             return Int16.Parse(_input);
         }
-
+        /// <summary>
+        /// Handles input and output of the Main Menu
+        /// </summary>
+        /// <returns></returns>
         public int GetUserInputMainMenu()
         {
             this.PrintMainMenu();
@@ -40,7 +48,10 @@ namespace assignment1
             return Int16.Parse(_input);
         }
 
-
+        /// <summary>
+        /// Handles the input and output of the Search Menu
+        /// </summary>
+        /// <returns></returns>
         public int GetUserInputSearchMenu()
         {
             this.PrintSearchMenu();
@@ -50,16 +61,16 @@ namespace assignment1
             while (_input != "1" && _input != "2" && _input != "3" && _input != "4")
             {
                 Console.WriteLine(WriteInvalidEntry());
-
                 this.PrintSearchMenu();
-
                 _input = Console.ReadLine();
             }
-
             return Int16.Parse(_input);
-
         }
 
+        /// <summary>
+        /// Generic invalid entry error message
+        /// </summary>
+        /// <returns></returns>
         private string WriteInvalidEntry()
         {
             string invalidEntry;
@@ -69,6 +80,11 @@ namespace assignment1
             return invalidEntry;
         }
 
+        /// <summary>
+        /// Specific invalid entry error message
+        /// </summary>
+        /// <param name="propertyName">string</param>
+        /// <returns></returns>
         private string WriteInvalidSpecificEntry(string propertyName)
         {
             string errorMessage = "XXXXXXXXXXXXXXXXXXXXXXXXXX" + Environment.NewLine +
@@ -77,6 +93,12 @@ namespace assignment1
             return errorMessage;
         }
 
+        /// <summary>
+        /// Takes the array and searches by which ever property is passed in.
+        /// </summary>
+        /// <param name="WineCollection"></param>
+        /// <param name="ExamineFile"></param>
+        /// <param name="propertyName"></param>
         public void SearchBy(WineItem[] WineCollection, CSVProcessor ExamineFile, string propertyName)
         {               
             Console.Write($"Enter {propertyName}: ");
