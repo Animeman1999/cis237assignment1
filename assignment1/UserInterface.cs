@@ -99,7 +99,7 @@ namespace assignment1
         /// <param name="WineCollection"></param>
         /// <param name="ExamineFile"></param>
         /// <param name="propertyName"></param>
-        public void SearchBy(WineItem[] WineCollection, CSVProcessor ExamineFile, string propertyName)
+        public void SearchBy(WineItem[] WineCollection, string propertyName)
         {               
             Console.Write($"Enter {propertyName}: ");
             string input = Console.ReadLine();

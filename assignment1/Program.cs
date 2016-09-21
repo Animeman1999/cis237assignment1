@@ -50,7 +50,7 @@ namespace assignment1
                             ui.PrintOutput(ui.CreateListString(wineCollection));
                             break;
                         case 2:
-                            SearchForWine(wineCollection, loadRecords);
+                            SearchForWine(wineCollection);
                             break;
                         default:
                             ui.AddWine(wineCollection, loadRecords);
@@ -59,14 +59,13 @@ namespace assignment1
                     choice = ui.GetUserInputMainMenu();
                 }
             }
-
         }
         /// <summary>
         /// Logic used for the PrintSearchMenu found the UserInterface.cs
         /// </summary>
         /// <param name="WineCollection">WineItem[]</param>
         /// <param name="ExamineFile">CSVProcessor</param>
-        static void SearchForWine(WineItem[] WineCollection, CSVProcessor ExamineFile)
+        static void SearchForWine(WineItem[] WineCollection)
         {   // Logic for the Search Menu found in UserInterface.cs
             
             UserInterface ui = new UserInterface();
@@ -76,13 +75,13 @@ namespace assignment1
                 switch (choice)
                 {
                     case 1:
-                        ui.SearchBy(WineCollection, ExamineFile, "ID");
+                        ui.SearchBy(WineCollection, "ID");
                         break;
                     case 2:
-                        ui.SearchBy(WineCollection, ExamineFile, "Description");
+                        ui.SearchBy(WineCollection, "Description");
                         break;
                     default:
-                        ui.SearchBy(WineCollection, ExamineFile, "Pack");
+                        ui.SearchBy(WineCollection, "Pack");
                         break;
                 }
                 choice = ui.GetUserInputSearchMenu();
