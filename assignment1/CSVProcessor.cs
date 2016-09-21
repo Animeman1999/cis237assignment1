@@ -39,8 +39,7 @@ namespace assignment1
             {
                 Console.WriteLine(e.ToString());
                 Console.WriteLine();
-                Console.WriteLine(e.StackTrace);
-                
+                Console.WriteLine(e.StackTrace);               
             }
             
             finally
@@ -50,8 +49,6 @@ namespace assignment1
                     streamReader.Close();
                 }
             }
-
-            
         }
 
 
@@ -64,44 +61,6 @@ namespace assignment1
             string pack = inputParts[2];
 
             wineCollection[index] = new WineItem(id, description, pack);
-        }
-
-        public string SearchBy(WineItem[] wineCollection, string searchFor, string propertyName)
-        {//Generic method to search any of the WineItem properties for the data specified by the user
-            bool found = false;
-            string listString = "*********************************************************************" + Environment.NewLine;
-            foreach (WineItem wineItem in wineCollection)
-            {
-
-                if (wineItem != null)
-                {
-                    
-                    if (searchFor == wineItem.GetType().GetProperty(propertyName).GetValue(wineItem).ToString())
-                    {
-                        found = true;
-                        listString += wineItem + Environment.NewLine;
-                    }
-                }
-            }
-            if (!found)
-            {
-                listString += searchFor + " was not found." + Environment.NewLine;
-            }
-            listString += "*********************************************************************" + Environment.NewLine;
-            return listString;
-        }
-
-        public void AddWineItem(WineItem[] wineCollection, WineItem wineItemToAdd)
-        {// Method used to fine a the first index of the WineItem array that does not have a record. Then it will 
-            // create a new WineItem to add the record to at the discovered index. 
-            for (int index = 0; index<=4000; index++)
-            {
-                if (wineCollection[index] == null)
-                {
-                    wineCollection[index] = new WineItem(wineItemToAdd.ID, wineItemToAdd.Description, wineItemToAdd.Pack);
-                    index = 5000;
-                }
-            }
         }
     }
 }

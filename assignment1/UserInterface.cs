@@ -13,6 +13,7 @@ namespace assignment1
     class UserInterface
     {// Class to handle all input and output for the program
 
+        WineArrayProcessor wineProcessor = new WineArrayProcessor();
         public int GetUserStartMenu()
         {
             this.StartMenu();
@@ -82,7 +83,7 @@ namespace assignment1
             }
             else
             {
-                PrintOutput(ExamineFile.SearchBy(WineCollection, input, propertyName));
+                PrintOutput(wineProcessor.SearchBy(WineCollection, input, propertyName));
             }
         }
 
@@ -119,7 +120,7 @@ namespace assignment1
                         wineItemToAdd.Description = descriptionInput;
                         wineItemToAdd.Pack = packInput;
 
-                        ExamineFile.AddWineItem(WineCollection, wineItemToAdd);
+                        wineProcessor.AddWineItem(WineCollection, wineItemToAdd);
                         Console.WriteLine("**************************************************************************");
                         Console.WriteLine(wineItemToAdd + " has been added to the file");
                         Console.WriteLine("**************************************************************************");
