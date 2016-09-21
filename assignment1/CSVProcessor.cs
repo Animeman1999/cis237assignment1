@@ -15,6 +15,11 @@ namespace assignment1
     {//This class will do all the manipulation being done to the WineItem array. The logic is placed
         //here for easy update should the file change from a CSV file do a database.
                
+            /// <summary>
+            /// Reads data from CSV file and loads it into the array
+            /// </summary>
+            /// <param name="csvFilePath">string</param>
+            /// <param name="wineCollection">WineItem[]</param>
         public void ReadFile(string csvFilePath, WineItem[] wineCollection)
         {// Method to place data into the WineItem array.
 
@@ -51,7 +56,12 @@ namespace assignment1
             }
         }
 
-
+        /// <summary>
+        /// Creats a single record and adds it into the array
+        /// </summary>
+        /// <param name="inputString">string</param>
+        /// <param name="wineCollection">WineItem</param>
+        /// <param name="index">int</param>
         static void processRecord(string inputString, WineItem[] wineCollection, int index)
         {// Internal method used for tacking a single record from the CSV file and placing into the array
             string[] inputParts = inputString.Split(',');

@@ -58,12 +58,19 @@ namespace assignment1
         //Methods
         //*********************************
 
+            /// <summary>
+            /// Creates the overide string for each WineItem 
+            /// </summary>
+            /// <returns></returns>
         private string CreateOverideString()
         {
             string overideString = $"{this._description} Wine ID: {this._id}; Sold in: {this._pack}";
             return overideString;
         }
-
+        /// <summary>
+        /// Creates the overide each WineItem 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return CreateOverideString();

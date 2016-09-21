@@ -185,6 +185,9 @@ namespace assignment1
             Console.Write("Press the number of the menu item: ");
         }
 
+        /// <summary>
+        /// Outputs the Main Menu to the console
+        /// </summary>
         private void PrintMainMenu()
         {
             Console.WriteLine();
@@ -198,7 +201,9 @@ namespace assignment1
             Console.Write("Press the number of the menu item: ");
 
         }
-
+        /// <summary>
+        /// Outputs the Search Menu to the console
+        /// </summary>
         private void PrintSearchMenu()
         {
             Console.WriteLine();
@@ -212,6 +217,11 @@ namespace assignment1
 
         }
 
+        /// <summary>
+        /// Creates the wine list into a string for output
+        /// </summary>
+        /// <param name="WineCollection"></param>
+        /// <returns></returns>
         public string CreateListString(WineItem[] WineCollection)
         {
             string headingString = Environment.NewLine + 
@@ -230,8 +240,7 @@ namespace assignment1
                         listString += headingString;
                     }
                     listString += $"{wineItem.ID,5} {wineItem.Description,-60} {wineItem.Pack,10}" + Environment.NewLine;
-                }
-                
+                }              
             }
             return listString;
         }
