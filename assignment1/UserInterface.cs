@@ -22,14 +22,18 @@ namespace assignment1
         public int GetUserStartMenu()
         {
             this.LoadMenu();
-            String _input = Console.ReadLine();
-            while (_input != "1" && _input != "2")
+            ConsoleKeyInfo inputChar = Console.ReadKey();
+            string inputString = inputChar.KeyChar.ToString();
+            Console.WriteLine();
+            while (inputString != "1" && inputString != "2")
             {
                 Console.WriteLine(WriteInvalidEntry());
                 this.LoadMenu();
-                _input = Console.ReadLine();
+                inputChar = Console.ReadKey();
+                inputString = inputChar.KeyChar.ToString();
+                Console.WriteLine();
             }
-            return Int16.Parse(_input);
+            return Int16.Parse(inputString);
         }
         /// <summary>
         /// Handles input and output of the Main Menu
@@ -38,14 +42,18 @@ namespace assignment1
         public int GetUserInputMainMenu()
         {
             this.PrintMainMenu();
-            String _input = Console.ReadLine();
-            while (_input != "1" && _input != "2" && _input !="3" && _input != "4")
+            ConsoleKeyInfo inputChar = Console.ReadKey();
+            string inputString = inputChar.KeyChar.ToString();
+            Console.WriteLine();
+            while (inputString != "1" && inputString != "2" && inputString != "3" && inputString != "4" )
             {
                 Console.WriteLine(WriteInvalidEntry());
                 this.PrintMainMenu();
-                _input = Console.ReadLine();
+                inputChar = Console.ReadKey();
+                inputString = inputChar.KeyChar.ToString();
+                Console.WriteLine();
             }
-            return Int16.Parse(_input);
+            return Int16.Parse(inputString);
         }
 
         /// <summary>
@@ -56,15 +64,18 @@ namespace assignment1
         {
             this.PrintSearchMenu();
 
-            String _input = Console.ReadLine();
-
-            while (_input != "1" && _input != "2" && _input != "3" && _input != "4")
+            ConsoleKeyInfo inputChar = Console.ReadKey();
+            string inputString = inputChar.KeyChar.ToString();
+            Console.WriteLine();
+            while (inputString != "1" && inputString != "2" && inputString != "3" && inputString != "4")
             {
                 Console.WriteLine(WriteInvalidEntry());
                 this.PrintSearchMenu();
-                _input = Console.ReadLine();
+                inputChar = Console.ReadKey();
+                inputString = inputChar.KeyChar.ToString();
+                Console.WriteLine();
             }
-            return Int16.Parse(_input);
+            return Int16.Parse(inputString);
         }
 
         /// <summary>
